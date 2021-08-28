@@ -1,0 +1,23 @@
+.hero-container{
+    background: url('../images/radioactive.jpg') center center/cover no-repeat;
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+
+/* @media screen and (max-width: 1550px) {
+    .hero-container{
+        background: url('../images/radioactive.jpg') center center/cover no-repeat;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        object-fit: contain;
+        opacity: 0.9;
+    }
+} */

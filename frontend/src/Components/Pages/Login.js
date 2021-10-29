@@ -4,6 +4,8 @@ import login_img from '../images/userIcon.png';
 import { Link } from 'react-router-dom';
 import AuthenticationService from '../api/AuthenticationService';
 import { Formik, Form, Field } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class LoginComponent extends Component{
@@ -31,79 +33,122 @@ class LoginComponent extends Component{
     }
 
     onSubmit(values)
-    {    
+    {
         AuthenticationService.logInWithLocalAccount(values.email, values.password).then(response => {
 
             if(response.status === 200)
             {
                 AuthenticationService.registerSuccesfullLoginWithJwt(values.email, response.data.token)
                 this.props.history.push('/');
+                window.location.reload();
             }
 
-        }).catch(error => {
-            console.log(error.response)
-            })
+        })
+        .catch(error => {
+            if (!this.state.email && !this.state.password) {
+                toast.error("Introdu o adresa de email!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+
+                toast.error("Introdu o parola!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+            else if (!this.state.password) {
+                toast.error("Introdu o parola!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+            else if (this.state.password.length < 5) {
+                toast.error("Parola trebuie sa contina mai mult de 5 caractere", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+            else{
+                toast.error("Something went wrong...", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+
+        })
         
-    }
-
-
-    validate(values) {
-        let errors = {}
-
-        if (values.password.length < 5) {
-            errors.password = "Use 5 or more characters for password!"
-        }
-
-        if (!values.email) {
-            errors.email = "Enter a Email address!"
-        }
-        if (!values.password) {
-            errors.password = "Enter a password"
-        }
-        return errors
     }
 
     render()
     {
         let{email,password} = this.state
         return(
+            <>
 
-            <div className="container">
-            
+            <div>
+                
+                <ToastContainer />
+
+                <div className="container">
+                
                 <img src={login_img} alt="userlogin"/>
 
-            <Formik
-                initialValues={{email,password}}
-                onSubmit={this.onSubmit}
-                validateOnChange={this.handleChange}
-                validateOnBlur={false}
-                validate={this.validate}
-            >
-                {(props) => (
-                <Form>
-                    <label><b>Adresa de email</b></label>
-                    {/* <input type="text" placeholder="Enter email" name="email" required onKeyUp={this.handleChange} /> */}
+                <Formik
+                    initialValues={{email,password}}
+                    onSubmit={this.onSubmit}
+                    validateOnChange={this.handleChange}
+                    validateOnBlur={false}
+                >
+                    {(props) => (
+                    <Form>
+                        <label><b>Adresa de email</b></label>
 
-                    <fieldset className="form-group-login">
-                        <Field className="input" type="text" name="email" placeholder="Email Address" onKeyUp={this.handleChange} />
-                    </fieldset>
+                        <fieldset className="form-group-login">
+                            <Field className="input" type="email" name="email" placeholder="Email Address" onKeyUp={this.handleChange}/>
+                        </fieldset>
 
-                    <label><b>Parola</b></label>
-                    {/* <input type="password" placeholder="Enter Password" name="password" required /> */}
+                        <label><b>Parola</b></label>
 
-                    <fieldset className="form-group-login">
-                        <Field className="input" type="password" name="password" placeholder="Password" />
-                    </fieldset>
+                        <fieldset className="form-group-login">
+                            <Field className="input" type="password" name="password" placeholder="Password"/>
+                        </fieldset>
 
-                    <button className="loginButton" type="submit">Autentificare</button>
-                </Form>
-                )}
+                        <button className="loginButton" type="submit">Autentificare</button>
+                    </Form>
+                    )}
 
-            </Formik>
+                </Formik>
 
-                <p className="signup">Don't have an account?<Link to='/signup'> Sign up</Link></p>
-                <p className="forgot"><Link to='/forgotpassword'> Forgot password?</Link></p>
+                    <p className="signup">Nu ai cont?<Link to='/signup'> Inregistreaza-te</Link></p>
+                    <p className="forgot"><Link to='/forgot'> Ai uitat parola?</Link></p>
+                </div>
             </div>
+            </>
 
         )
     }

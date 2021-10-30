@@ -1,0 +1,83 @@
+/* .hero-container{
+    background: url('../images/radioactive.jpg') center center/cover no-repeat;
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+} */
+.map-button{
+    width: 900px;
+    height:550px;
+    position: absolute;
+    left:5%;
+    background: url('../images/google-map-background.jpg') center center/cover no-repeat;
+}
+
+.chart-button{
+    width: 700px;
+    height:550px;
+    position: absolute;
+    left:53%;
+    background: url('../images/chart-background.jpg') center center/cover no-repeat;
+}
+
+.sensor-text, .sensor-location-text{
+    color:white;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sensor-value, .sensor-location-value{
+    color: white;
+    margin-left: 38%;
+    font-size: 45px;
+    display:inline-block;
+}
+
+.sensor-measurement{
+    margin-left: 10px;
+    color:white;
+    font-size: 20px;
+    display:inline-block;
+}
+
+.greatest-sensor-value-container, .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
+    background: linear-gradient(to right, #FFA62E , #FF881B);
+    width: 16%;
+    height: 125px;
+    margin-top:2.5%;
+    margin-left: 7%;
+    display:inline-block;
+    float:left;
+    border-radius: 5px;
+}
+
+.line-chart{
+    float:left;
+    display: inline-block;
+    margin-left: 7%;
+    margin-top: 10%;
+
+}
+
+.bar-chart{
+    float:left;
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 5%;
+
+}
+/* @media screen and (max-width: 1550px) {
+    .hero-container{
+        background: url('../images/radioactive.jpg') center center/cover no-repeat;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        object-fit: contain;
+        opacity: 0.9;
+    }
+} */

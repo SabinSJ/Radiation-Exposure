@@ -3,21 +3,16 @@ package com.radiationexposure.commons.backend.jwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import javax.servlet.Filter;
 
 @Configuration
 @EnableWebSecurity
@@ -49,7 +44,25 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate","/sensor/*").permitAll()
+                .antMatchers(
+                        "/authenticate",
+                        "/sensor/*",
+                        "/sensor/getSensor/*",
+                        "/sensor/getDataByTimestampForDailyChart/",
+                        "/sensor/getDataForDailyChartByMonth",
+                        "/sensor/getDataByTimestampsForChartByChoosingMonth/*/*/*",
+                        "/sensor/getDataByTimestampsForChartByChoosingDay/*/*/*",
+                        "/user/*",
+                        "/user/getUserData/*",
+                        "/user/changeUserData/*/*/*/*",
+                        "/user/verifyPassword/*/*",
+                        "/user/changePassword/*/*",
+                        "/userLocationTracker/*",
+                        "/userLocationTracker/getTrackingData/*",
+                        "/userLocationTracker/getTrackingDataByDay/*/*/*/*",
+                        "/forgot/*",
+                        "/reset/*/*")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

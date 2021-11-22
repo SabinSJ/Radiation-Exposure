@@ -24,8 +24,8 @@ public class ElasticSearchConfig {
     @Value("${elasticsearch.password}")
     private String password;
 
-    @Bean
-    public RestHighLevelClient client(){
+    @Bean(destroyMethod = "close")
+    public RestHighLevelClient restClient(){
         final CredentialsProvider credentialsProvider =new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials(userName, password));
         RestClientBuilder builder = RestClient.builder(new HttpHost(host, port, "https"))

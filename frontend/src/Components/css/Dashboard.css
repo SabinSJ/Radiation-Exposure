@@ -7,6 +7,20 @@
     align-items: center;
     object-fit: contain;
 } */
+
+.apexcharts-tooltip {
+    /* width: 500px;
+    height:100px; */
+  }
+
+  #chartContainer .apexcharts-tooltip {
+    color: #000000;
+  }
+  
+  #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+    background: #ffffff !important;
+  }
+
 .map-button{
     width: 900px;
     height:550px;
@@ -45,29 +59,38 @@
 }
 
 .greatest-sensor-value-container, .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
-    background: linear-gradient(to right, #FFA62E , #FF881B);
+    background: linear-gradient(to right, #fec7a1 , #fe848e);
+    background: linear-gradient(to right, #2ec7bd, #40acf4);
+    /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
     width: 16%;
     height: 125px;
     margin-top:2.5%;
     margin-left: 7%;
     display:inline-block;
     float:left;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.line-chart{
+.dashboard-line-chart{
     float:left;
     display: inline-block;
-    margin-left: 7%;
-    margin-top: 10%;
-
-}
-
-.bar-chart{
-    float:left;
-    display: inline-block;
-    margin-top: 10%;
     margin-left: 5%;
+    margin-top: 10%;
+    background: #2b2d3e;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.dashboard-bar-chart{
+    float:left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 28%;
+    margin-bottom: 5%;
 
 }
 /* @media screen and (max-width: 1550px) {

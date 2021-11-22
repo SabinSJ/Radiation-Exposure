@@ -36,17 +36,16 @@
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
+    grid-template-columns: repeat(5, auto);
+    /* grid-gap: 10px; */
     list-style: none;
     text-align: center;
-    width: 60vw;
+    width: 80vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 20px;
   }
   
   .nav-item {
-    height: 80px;
   }
   
   .nav-links {
@@ -64,7 +63,7 @@
   }
   
   .fa-bars {
-    color: #fff;
+    color:#fff;
   }
   
   .nav-links-mobile {
@@ -74,6 +73,53 @@
   .menu-icon {
     display: none;
   }
+
+
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    float:right;
+    margin-left: 50px;
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.1);
+  }
+  
+  .label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(1.1px);
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(21px);
+  }
+  
+  
+  .fa-moon {
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+  }  
   
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -84,9 +130,9 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 90vh;
+      height: 92.6vh;
       position: absolute;
-      top: 80px;
+      top: 70px;
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;

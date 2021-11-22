@@ -1,31 +1,122 @@
+import React, { Component } from 'react'
 import '../css/Signup.css';
+import AuthenticationService from '../api/AuthenticationService';
+import { Formik, Form, Field } from 'formik';
 
-function Signup()
+
+class Signup extends Component
 {
-    return(
+    constructor(props)
+    {
+        super(props)
 
+        this.state = {
+            firstName: '',
+            lastName: '',
+            username: '',
+            password: ''
+        }
 
-        <div className="container">
-           
-            <h2>Inregistrare</h2>
+        this.onSubmit = this.onSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+    }
 
-            <label><b>Nume</b></label>
-            <input type="text" placeholder="" name="uname" required/>
+    onSubmit(values)
+    {
+        AuthenticationService.signUpWithLocalAccount(values.firstName, values.lastName, values.username, values.password)
+        .then(res => {
 
-            <label><b>Prenume</b></label>
-            <input type="text" placeholder="" name="uname" required/>
+            if(res.status === 200)
+            {
+                this.props.history.push('/login')
+            }
 
-            <label><b>Adresa de email</b></label>
-            <input type="text" placeholder="" name="uname" required/>
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
-            <label><b>Parola</b></label>
-            <input type="password" placeholder="" name="pwd" required/>
+    handleChange(event){
+        this.setState(
+            {
+            [event.target.name]
+                : event.target.value
+            }
+        )
+    }
 
-            <button className="loginButton" type="submit">Creeaza cont</button>
+    validate(values){
+        let errors = {}
+        
+        if(!values.firstName)
+        {
+            errors.firstName = "Introdu un prenume!"
+        }
+        if(!values.lastName)
+        {
+            errors.lastName = "Introdu nume!"
+        }
+        if(!values.username)
+        {
+            errors.username = "Introdu o adresa de email!"
+        }
+        if(!values.password)
+        {
+            errors.password = "Introdu o parola!"
+        }
+    }
 
-        </div>
+    render()
+    {
+        let {firstName, lastName, username, password} = this.state
 
-    )
+        return(
+
+            <div className="container">
+            
+                <Formik
+                    initialValues={{firstName,lastName,username,password}}
+                    onSubmit={this.onSubmit}
+                    validateOnChange={this.handleChange}
+                    validateOnBlur={false}
+                    validate={this.validate}
+                >
+                    {(props) => (
+                
+                <Form>
+
+                <h2>Inregistrare</h2>
+
+                <label><b>Nume</b></label>
+                <fieldset className="form-group-login">
+                    <Field className="input" type="text" name="lastName" placeholder="Nume" />
+                </fieldset>
+
+                <label><b>Prenume</b></label>
+                <fieldset className="form-group-login">
+                    <Field className="input" type="text" name="firstName" placeholder="Prenume" />
+                </fieldset>
+
+                <label><b>Adresa de email</b></label>
+                <fieldset className="form-group-login">
+                    <Field className="input" type="email" name="username" placeholder="Adresa de email" />
+                </fieldset>
+
+                <label><b>Parola</b></label>
+                <fieldset className="form-group-login">
+                    <Field className="input" type="password" name="password" placeholder="Parola" />
+                </fieldset>
+
+                <button className="loginButton" type="submit">Creeaza cont</button>
+                
+                </Form>)}
+                
+                </Formik>
+
+            </div>
+
+        )
+    }
 }
 
 export default Signup;

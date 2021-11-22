@@ -1,5 +1,6 @@
 package com.radiationexposure.commons.backend.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,35 +11,25 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 
 @Data
-@Document(indexName = "pocket-geiger-data")
+@Document(indexName="geiger-user-location")
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class PocketGeigerDTO {
+public class UserLocationTrackerDTO {
 
     @Id
     @ReadOnlyProperty
     private String id;
 
-    @Field(name = "Source")
-    private String source;
+    @Field(name = "username")
+    private String username;
 
-    @Field(name = "Sensor")
-    private String sensor;
+    @Field(name="latitude")
+    private Double latitude;
 
-    @Field(name = "Value")
-    private Double value;
+    @Field(name="longitude")
+    private Double longitude;
 
-    @Field(name = "LocationLat")
-    private Double locationlat;
-
-    @Field(name = "LocationLong")
-    private Double locationlong;
-
-    @Field(name = "TimeStamp", format = DateFormat.epoch_millis)
-    private long timestamp;
-
-    @Field(name = "Measurement")
-    private String measurement;
-
+    @Field(name="timestamp", format = DateFormat.epoch_millis)
+    private Long timestamp;
 }

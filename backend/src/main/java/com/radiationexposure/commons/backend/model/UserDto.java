@@ -21,8 +21,11 @@ public class UserDto {
     @ReadOnlyProperty
     private String id;
 
-    @Field(name = "name")
-    private String name;
+    @Field(name = "firstName")
+    private String firstName;
+
+    @Field(name = "LastName")
+    private String LastName;
 
     @Field(name = "address")
     private String address;

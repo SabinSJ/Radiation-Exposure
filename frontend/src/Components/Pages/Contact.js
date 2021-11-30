@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../css/Contact.css'
 import {useFormik} from 'formik';
 import emailjs from 'emailjs-com'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import locationImage from '../images/location-icon.png'
 import phoneImage from '../images/phone-icon.png'
@@ -19,18 +21,57 @@ export default function Contact() {
             message:''
         },
         onSubmit: values =>{
-            console.log(values)
 
-            emailjs.send(
-                "service_o719lrb",
-                "template_g8l7dhw",
-                values,
-                "user_9h7JJwzBcPHXoD7JZsatI"
-            ).then(res=>{
-                console.log(res.status)
-            }).catch(error => {
-                console.log(error)
-            })
+            console.log(values.subject)
+            console.log(values.email)
+            console.log(values.message)
+            
+            if(values.subject === "")
+            {
+                toast.error("Introdu un subiect!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }else if(values.email === "")
+            {
+                toast.error("Introdu o adresa de email!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }else if(values.message === "")
+            {
+                toast.error("Introdu un mesaj!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }else{
+
+                emailjs.send(
+                    "service_o719lrb",
+                    "template_g8l7dhw",
+                    values,
+                    "user_9h7JJwzBcPHXoD7JZsatI"
+                ).then(res=>{
+                    console.log(res.status)
+                }).catch(error => {
+                    console.log(error)
+                })
+            }
         }
     })
     
@@ -38,8 +79,8 @@ export default function Contact() {
     return (
         <div>
             <div className="contact-container">
-                <h1 className="contact_title_name">CONTACT</h1>
-                <hr className="dot_line"></hr>
+                <p className="contact_title_name">CONTACT</p>
+                <hr className="upper_dot_line"></hr>
 
                 {/* <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST"> */}
                 <div className="form-container">
@@ -99,7 +140,7 @@ export default function Contact() {
                         <h3>florinsabin.sarca@gmail.com</h3>
                     </div>
 
-                    <hr class="dot_line"></hr>
+                    <hr class="bottom_dot_line"></hr>
 
                     <div className="social-links">
                         <a href="https://www.linkedin.com/in/florin-sabin-sarca/">

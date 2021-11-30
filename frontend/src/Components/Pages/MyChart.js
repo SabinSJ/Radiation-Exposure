@@ -54,7 +54,7 @@ class MyChart extends Component {
           dashArray: 0,      
         },
         noData: {
-          text: 'Loading...',
+          text: 'Alegeti o data pentru a afisa date...',
           align: 'center',
           verticalAlign: 'middle',
           offsetX: 0,
@@ -112,7 +112,7 @@ class MyChart extends Component {
           dashArray: 0,      
         },
         noData: {
-          text: 'Loading...',
+          text: 'Alegeti o data pentru a afisa date...',
           align: 'center',
           verticalAlign: 'middle',
           offsetX: 0,
@@ -132,7 +132,7 @@ class MyChart extends Component {
         ]
       },
       maxValueOfTheDay: 0,
-      avgValueTheDay: 0,
+      avgValueOfTheDay: 0,
       maxValueOfTheMonth: 0,
       avgValueTheMonth: 0,
       startDate: new Date(),
@@ -246,6 +246,8 @@ class MyChart extends Component {
 
   render() {
 
+    console.log(this.state.avgValueTheDay)
+
     return (
       <>
 
@@ -276,15 +278,48 @@ class MyChart extends Component {
         <div className="chart-greatest-sensor-value-container">       
           <div className="chart-sensor-text">Valoarea maxima din ziua aleasa</div>
 
-          <div className="chart-sensor-value">{this.state.maxValueOfTheDay}</div>
-          <div className="chart-sensor-measurement">nSv/h</div>
+          <div className="value">{this.state.maxValueOfTheDay} nSv/h</div>
         </div>
 
         <div className="chart-average-sensor-value-container">
             <div className="chart-sensor-text">Valoarea medie a senzorului</div>
 
-            <div className="chart-sensor-value">{this.state.avgValueOfTheDay}</div>
-            <div className="chart-sensor-measurement">nSv/h</div>
+              <div className="value">{this.state.avgValueOfTheDay} nSv/h</div>
+
+        </div>
+
+        <div className="chart-greatest-sensor-value-container">
+                      
+          <div className="chart-sensor-text">Valoarea maxima din luna aleasa</div>
+
+          { this.state.maxValueOfTheMonth === 0
+          
+          ?
+          
+          <div className="value">0 nSv/h</div>
+
+          :
+          
+          <div className="value">{this.state.maxValueOfTheMonth} nSv/h</div>
+          }
+          
+        </div>
+
+        <div className="chart-average-sensor-value-container">
+          
+          <div className="chart-sensor-text">Valoarea medie a senzorului</div>
+
+          { this.state.avgValueOfTheDay === 0
+
+          ?
+
+          <div className="value">0 nSv/h</div>
+
+          :
+
+          <div className="value">{this.state.avgValueOfTheMonth} nSv/h</div>
+          }
+
         </div>
       </div>
 
@@ -293,39 +328,18 @@ class MyChart extends Component {
             options={this.state.options}
             series={this.state.options.series}
             type="area"
-            width="900"
             height="300"
           />
         </div>
 
-        <div className="month-chart-boxes">
-
-          <div className="chart-greatest-sensor-value-container">
-                      
-            <div className="chart-sensor-text">Valoarea maxima din luna aleasa</div>
-
-            <div className="chart-sensor-value">{this.state.maxValueOfTheMonth}</div>
-            <div className="chart-sensor-measurement">nSv/h</div>
-
-          </div>
-
-          <div className="chart-average-sensor-value-container">
-              
-              <div className="chart-sensor-text">Valoarea medie a senzorului</div>
-
-              <div className="chart-sensor-value">{this.state.avgValueOfTheMonth}</div>
-              <div className="chart-sensor-measurement">nSv/h</div>
-
-          </div>
-
-        </div>
+        {/* <div className="month-chart-boxes">
+        </div> */}
 
         <div className="month-line-chart">
           <ApexCharts
             options={this.state.monthlyLineOptions}
             series={this.state.monthlyLineOptions.series}
             type="area"
-            width="900"
             height="300"
           />
         </div>

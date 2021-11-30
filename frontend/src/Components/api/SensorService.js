@@ -2,19 +2,40 @@ import axios from 'axios'
 
 class SensorService{
 
-    getSensorValuesAndTimeStamp()
+    // getSensorValuesAndTimeStamp()
+    // {
+    //     return axios.get("http://185.146.87.75:8080/radioactivitate/sensor/getSensor/PocketGeiger");
+    // }
+
+    getSensorValuesAndTimeStamp(userLatitude, userLongitude)
     {
-        return axios.get("http://radiationexposurebackend-env-1.eba-ipfipxqm.us-east-2.elasticbeanstalk.com/sensor/getSensor/PocketGeiger");
+        return axios.get(`http://localhost:8080/sensor/getSensor/PocketGeiger`, {userLatitude, userLongitude});
     }
 
-    getTimestampForToday()
+    getDataByTimestampForToday(userLatitude, userLongitude)
     {
-        return axios.get(`http://radiationexposurebackend-env-1.eba-ipfipxqm.us-east-2.elasticbeanstalk.com/sensor/getTimestamp/`)
+        return axios.get(`http://localhost:8080/sensor/getDataByTimestampForDailyChart/PocketGeiger/${userLatitude}/${userLongitude}`, {userLatitude, userLongitude});
+    }
+
+    getTimestampForMonth()
+    {
+        return axios.get("http://185.146.87.75:8080/radioactivitate/sensor/getDataForDailyChartByMonth")
     }
 
     getDataByTimestampsForChartByChoosingDay(day,month,year)
     {
-        return axios.get(`http://localhost:8080/sensor/getDataByTimestampsForChartByChoosingDay/${day}/${month}/${year}`, {day,month,year});
+        return axios.get(`http://185.146.87.75:8080/radioactivitate/sensor/getDataByTimestampsForChartByChoosingDay/${day}/${month}/${year}`, {day,month,year});
+    }
+
+    getDataByTimestampsForChartByChoosingMonth(day,month,year)
+    {
+        return axios.get(`http://185.146.87.75:8080/radioactivitate/sensor/getDataByTimestampsForChartByChoosingMonth/${day}/${month}/${year}`, {day,month,year});
+    }
+
+
+    getAverageValuesMonthToMonth()
+    {
+        return axios.get(`http://185.146.87.75:8080/radioactivitate/sensor/getAvgValuesMonthToMonth`);
     }
 
     //getDataByTimestampForDailyChart

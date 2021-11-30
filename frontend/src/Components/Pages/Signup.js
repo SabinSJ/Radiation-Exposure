@@ -72,7 +72,7 @@ class Signup extends Component
 
         return(
 
-            <div className="container">
+            <div className="signup-container">
             
                 <Formik
                     initialValues={{firstName,lastName,username,password}}
@@ -107,7 +107,7 @@ class Signup extends Component
                     <Field className="input" type="password" name="password" placeholder="Parola" />
                 </fieldset>
 
-                <button className="loginButton" type="submit">Creeaza cont</button>
+                <button className="signup-button" type="submit">Creeaza cont</button>
                 
                 </Form>)}
                 

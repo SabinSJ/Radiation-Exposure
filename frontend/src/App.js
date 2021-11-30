@@ -16,7 +16,17 @@ import Contact from "./Components/Pages/Contact"
 
 import AuthenticationRoute from './Components/AuthenticationRoute';
 
+import AuthenticationService from './Components/api/AuthenticationService';
+
 class App extends Component{
+  
+
+  requireLogin() {
+
+    if (!AuthenticationService.isUserLoggedIn()) {
+      
+    }
+  }
 
   render(){
     return (
@@ -24,9 +34,9 @@ class App extends Component{
          <Router>
           <Navbar/>
           <Switch>
-            <Route path='/' exact component={Home}/>
-            <Route path='/harta' exact component={GoogleMaps}/>
-            <Route path='/grafic' exact component={MyChart}/>
+            <AuthenticationRoute path='/' exact component={Home} onEnter={this.requireLogin()}/>
+            <AuthenticationRoute path='/harta' exact component={GoogleMaps}/>
+            <AuthenticationRoute path='/grafic' exact component={MyChart}/>
             <Route path='/contact' exact component={Contact}/>
             <AuthenticationRoute path='/profile' exact component={UserProfile}/>
             <Route path='/login' exact component={LoginComponent}/>

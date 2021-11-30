@@ -18,6 +18,7 @@ class UserProfile extends Component{
             loading: false,
             checked:false,
             passwordVerified: false,
+            address: '',
 
             username:'',
             address:''
@@ -26,8 +27,6 @@ class UserProfile extends Component{
         this.handleClick= this.handleClick.bind(this);
         this.verifyPassword = this.verifyPassword.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleValue = this.handleValue.bind(this);
-        this.handleSelect = this.handleSelect.bind(this);
         this.changeData = this.changeData.bind(this);
         this.onInputchange = this.onInputchange.bind(this);
         this.changePassword = this.changePassword.bind(this);
@@ -71,7 +70,16 @@ class UserProfile extends Component{
                     </label>
                 </div>
 
+                {
+                window.innerWidth <= 1200
+                
+                ?
+                <hr class="dot_line"></hr>
+
+                :
+
                 <div className="vertical-line"></div>
+                }
 
                 <div className="row">
                     <div className="col-title">
@@ -158,11 +166,11 @@ class UserProfile extends Component{
         this.setState({checked});
     }
 
-    handleValue(address){
+    handleValue = address =>{
         this.setState({address});
     }
 
-    handleSelect(address){
+    handleSelect = address => {
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(this.setState({address}))
@@ -225,7 +233,7 @@ class UserProfile extends Component{
         return (
             <div className="edit-container-profile">
 
-                <div className="left-col">
+                <div className="editing-left-col">
                     <img className="user-profile-image" src={happy_user} alt="happyUser"/>
                     
                     <div className="user-fullname">
@@ -245,7 +253,16 @@ class UserProfile extends Component{
                     </label>
                 </div>
 
+                {
+                window.innerWidth <= 1200
+                
+                ?
+                <hr class="dot_line"></hr>
+                
+                :
+
                 <div className="vertical-line"></div>
+                }
 
                 <div className="editing-row">
                         <div className="col-title">
@@ -263,7 +280,7 @@ class UserProfile extends Component{
                         <input
                             name="lastName"
                             type="text"
-                            value={this.state.userData[7]}
+                            placeholder= "Introduceti numele de familie"
                             onChange={this.onInputchange}
                         />
                     </div>
@@ -274,53 +291,59 @@ class UserProfile extends Component{
                         <input
                             name="firstName"
                             type="text"
-                            value={this.state.userData[1]}
+                            placeholder= 'Introduceti pronumele'
                             onChange={this.onInputchange}
                         />
                     </div>
 
                     <div className="editing-row">
                         <label><b>Adresa</b></label>
-
-                            <PlacesAutocomplete
-                            value={this.state.userData[2]}
-                            onChange={this.handleValue}
-                            onSelect={this.handleSelect}
-                            >
-                            {({
-                                getInputProps,
-                                suggestions,
-                                getSuggestionItemProps,
-                                loading,
-                            }) => (
-                                <div>
+                            
+                        <PlacesAutocomplete
+                        value={this.state.address}
+                        onChange={this.handleValue}
+                        onSelect={this.handleSelect}
+                        >
+                            {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                            <div>
                                 <input
-                                    {...getInputProps({
-                                    placeholder: "Introdu o adresa",
-                                    })}
+                                {...getInputProps({
+                                    placeholder: 'Cautati locatia curenta',
+                                    className: 'location-search-input',
+                                })}
                                 />
                                 <div className="autocomplete-dropdown-container">
-                                    {loading && <div>Loading...</div>}
-                                    {suggestions.map((suggestion) => {
+                                {loading && <div>Loading...</div>}
+                                {suggestions.map(suggestion => {
+                                    const className = suggestion.active
+                                    ? 'suggestion-item--active'
+                                    : 'suggestion-item';
+                                    // inline style for demonstration purpose
                                     const style = suggestion.active
-                                        ? { backgroundColor: "#e9e9e9", cursor: "pointer" }
-                                        : { backgroundColor: "#ffffff", cursor: "pointer" };
-
+                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+                                    : { backgroundColor: '#ffffff', cursor: 'pointer' };
                                     return (
-                                        <div {...getSuggestionItemProps(suggestion, { style })}>
-                                        {suggestion.description}
-                                        </div>
+                                    <div
+                                        {...getSuggestionItemProps(suggestion, {
+                                        className,
+                                        style,
+                                        })}
+                                    >
+                                        <span>{suggestion.description}</span>
+                                    </div>
                                     );
-                                    })}
+                                })}
                                 </div>
-                                </div>
+                            </div>
                             )}
-                            </PlacesAutocomplete>
+                        </PlacesAutocomplete>
+
+
                     </div>
 
                     {this.state.checked && 
 
-                    <div className="editing-row">
+                    <div className="pwd-editing-row">
                         <label><b>Parola</b></label>
 
                         <input

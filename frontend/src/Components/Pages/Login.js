@@ -114,7 +114,7 @@ class LoginComponent extends Component{
                 
                 <ToastContainer />
 
-                <div className="container">
+                <div className="login-container">
                 
                 <img src={login_img} alt="userlogin"/>
 
@@ -126,19 +126,19 @@ class LoginComponent extends Component{
                 >
                     {(props) => (
                     <Form>
-                        <label><b>Adresa de email</b></label>
+                        <label className="login-label"><b>Adresa de email</b></label>
 
                         <fieldset className="form-group-login">
                             <Field className="input" type="email" name="email" placeholder="Email Address" onKeyUp={this.handleChange}/>
                         </fieldset>
 
-                        <label><b>Parola</b></label>
+                        <label className="login-label"><b>Parola</b></label>
 
                         <fieldset className="form-group-login">
                             <Field className="input" type="password" name="password" placeholder="Password"/>
                         </fieldset>
 
-                        <button className="loginButton" type="submit">Autentificare</button>
+                        <button className="login-button" type="submit">Autentificare</button>
                     </Form>
                     )}
 

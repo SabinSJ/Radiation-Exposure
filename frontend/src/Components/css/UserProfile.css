@@ -1,191 +1,637 @@
-.container-profile {
-  background-color: #fff;
-  width: 950px;
-  height: 650px;
-  padding: 16px;
-  display: inline-block;
-  margin: 8px 0;
-  border-radius: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 22px;
-  box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
-}
 
-.edit-container-profile{
-  background-color: #fff;
-  width: 950px;
-  height: 650px;
-  padding: 16px;
-  border-radius: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 22px;
-  box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
-}
 
-.row{
-  float:right;
-  padding:20px 20px 20px 20px;
-  position: relative;
-  top:5%;
-  margin-top: 25px;
-  width: 55%;
-  height:10%;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.editing-row{
-  float:left;
-  top:5%;
-  margin-left:90px;
-  margin-top: 25px;
-  width: 35%;
-  height:10%;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.autocomplete-dropdown-container
-{
-  position: absolute;
-  z-index: 1000;
-}
-
-.change-password-text{
-  margin-top: 20%;
-  margin-left:15%;
-  display: inline-block;
-  float:left;
-}
-
-.switch {
-  float:right;
-  position: relative;
-  display: inline-block;
-  margin-top:17%;
-  width: 60px;
-  height: 34px;
-}
-
-.verify-btn{
-  border: 2px solid;
-  background-color: white;
-  border-color: #ff9800;
-  color: orange;
-  float:left;
-  display:inline-block;
-  width: 10%;
-  height:30px;
-  margin-top: 62px;
-  margin-left: 40px;
-  cursor: pointer;
-}
-
-.verify-btn:hover{
-  background: #ff9800;
-  color: white;
-}
-
-.change-password-btn{
-  border: 2px solid;
-  background-color: white;
-  border-color: rgb(60, 189, 82);
-  color: rgb(60, 189, 82);
-  float:left;
-  display:inline-block;
-  width: 15%;
-  height:35px;
-  margin-top: 57.5px;
-  margin-left: 40px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.change-password-btn:hover{
-  background: rgb(60, 189, 82);
-  color: white;
-}
-
-.save-changes-btn{
-  width: 25%;
-  background-color: #2196F3;
-  color: white;
-  padding: 14px 20px;
-  margin-top: 40px;
-  margin-left: 11%;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.save-changes-btn:hover {opacity: 0.8;}
-
-.col-title{font-size: 20px;}
-
-.col-text-secondary{margin-top: 5px;font-size: 18px;}
-
-span{position:absolute;left:50%;right:50%;top:50%;size:20px;}
-
-.settings-button{
-  display:inline-block;
-  padding:0.35em 1.2em;
-  border:0.1em solid black;
-  margin-top: 40%;
-  margin-left: 30%;
-  border-radius:0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-weight:300;
-  font-size: 16px;
-  color:black;
-  text-align:center;
-  transition: all 0.2s;
-  height:8%;
-  cursor:pointer;
-}
-
-.settings-button:hover{color:#000000;background-color:#99959585;}
-
-.left-col{height:500px;width:250px;float:left;margin-top: 5%;}
-
-.user-profile-image{height:150px;width:250px;display: block;margin: 0 auto;float:left;margin-left:8%;}
-
-.user-fullname{font-size: 20px;margin-top:200px;margin-left:30px;text-align:center;}
-
-.vertical-line{float:left;border: 1px inset;height: 90%;margin-left:5%;}
-
-.edit-text{font-size: 17px;float:left;margin-top: 16%;margin-left:5%;display:block;}
-
-.change-data-btn{
-  width: 25%;
-  height:30px;
-  float:right;
-  background-color: #42db47;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.change-data-btn:hover {
-	background-color: #55a84d;
-}
-
-.change-data-input {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.form-group-login{
-  border:#fff 1px solid;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container-profile {
+    background-color: #fff;
+    width: 350px;
+    height: 900px;
+    padding: 16px;
+    display: inline-block;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    margin: 80px 0 0 0;
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
   }
+  
+  .edit-container-profile{
+    background-color: #fff;
+    width: 350px;
+    height: 1120px;
+    padding: 16px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    margin: 180px 0 0 0;
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
+  }
+
+  .dot_line{
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  .row{
+    width: 65%;
+    height: 10%;
+    padding: 20px;
+    position: relative;
+    top: 5%;
+    margin: 25px 60px 0 0;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .editing-row{
+    width: 65%;
+    height: 5%;
+    float: left;
+    top: 5%;
+    margin-left: 60px;
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .pwd-editing-row{
+    width: 40%;
+    height: 10%;
+    float: left;
+    top: 5%;
+    margin-left: 60px;
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .autocomplete-dropdown-container
+  {
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .change-password-text{
+    margin-top: 20%;
+    margin-left:15%;
+    display: inline-block;
+    float:left;
+  }
+  
+  .switch {
+    float:right;
+    position: relative;
+    display: inline-block;
+    margin-top:17%;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .verify-btn{
+    width: 20%;
+    height: 30px;
+    border: 2px solid;
+    background-color: white;
+    border-color: #ff9800;
+    color: orange;
+    float:left;
+    display:inline-block;
+    margin-top: 75px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  .verify-btn:hover{
+    background: #ff9800;
+    color: white;
+  }
+  
+  .change-password-btn{
+    width: 27%;
+    height: 40px;
+    border: 2px solid;
+    background-color: white;
+    border-color: rgb(60, 189, 82);
+    color: rgb(60, 189, 82);
+    float:left;
+    display:inline-block;
+    margin-top: 70px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .change-password-btn:hover{
+    background: rgb(60, 189, 82);
+    color: white;
+  }
+  
+  .save-changes-btn{
+    width: 70%;
+    height: 50px;
+    background-color: #2196F3;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 40px;
+    margin-left: 16%;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .save-changes-btn:hover {opacity: 0.8;}
+  
+  .col-title{font-size: 20px;}
+  
+  .col-text-secondary{margin-top: 5px;font-size: 18px;}
+  
+  span{}
+  
+  .settings-button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid black;
+    margin-top: 40%;
+    margin-left: 30%;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    font-size: 16px;
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
+    height:8%;
+    cursor:pointer;
+  }
+  
+  .settings-button:hover{color:#000000;background-color:#99959585;}
+  
+  .left-col{ height: 330px; width: 250px; float: left; margin-top: 5%;}
+
+  .editing-left-col{ height: 430px; width: 250px; float: left; margin-top: 5%;}
+  
+  .user-profile-image{height:150px; width:250px; display: block; margin: 0 auto; float:left; margin-left: 30px;}
+  
+  .user-fullname{font-size: 20px;margin-top:200px;margin-left: 60px;text-align:center;}
+  
+  .vertical-line{float:left;border: 1px inset;height: 90%;margin-left:5%;}
+  
+  .edit-text{font-size: 17px;float:left;margin-top: 16%;margin-left:5%;display:block;}
+  
+  .change-data-btn{
+    width: 25%;
+    height:30px;
+    float:right;
+    background-color: #42db47;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .change-data-btn:hover {
+    background-color: #55a84d;
+  }
+  
+  .change-data-input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group-login{
+    border:#fff 1px solid;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+  .container-profile {
+    background-color: #fff;
+    width: 350px;
+    height: 900px;
+    padding: 16px;
+    display: inline-block;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    margin: 80px 0 0 0;
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
+  }
+  
+  .edit-container-profile{
+    background-color: #fff;
+    width: 350px;
+    height: 1120px;
+    padding: 16px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    margin: 180px 0 0 0;
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
+  }
+
+  .dot_line{
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  .row{
+    width: 65%;
+    height: 10%;
+    padding: 20px;
+    position: relative;
+    top: 5%;
+    margin: 25px 0 0 50px;
+    font-family: "Times New Roman", Times, serif;
+    
+  }
+  
+  .editing-row{
+    width: 65%;
+    height: 5%;
+    float: left;
+    top: 5%;
+    margin-left: 60px;
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .pwd-editing-row{
+    width: 40%;
+    height: 10%;
+    float: left;
+    top: 5%;
+    margin-left: 60px;
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .autocomplete-dropdown-container
+  {
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .change-password-text{
+    margin-top: 20%;
+    margin-left:15%;
+    display: inline-block;
+    float:left;
+  }
+  
+  .switch {
+    float:right;
+    position: relative;
+    display: inline-block;
+    margin-top:17%;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .verify-btn{
+    width: 20%;
+    height: 30px;
+    border: 2px solid;
+    background-color: white;
+    border-color: #ff9800;
+    color: orange;
+    float:left;
+    display:inline-block;
+    margin-top: 75px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  .verify-btn:hover{
+    background: #ff9800;
+    color: white;
+  }
+  
+  .change-password-btn{
+    width: 27%;
+    height: 40px;
+    border: 2px solid;
+    background-color: white;
+    border-color: rgb(60, 189, 82);
+    color: rgb(60, 189, 82);
+    float:left;
+    display:inline-block;
+    margin-top: 70px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .change-password-btn:hover{
+    background: rgb(60, 189, 82);
+    color: white;
+  }
+  
+  .save-changes-btn{
+    width: 70%;
+    height: 50px;
+    background-color: #2196F3;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 40px;
+    margin-left: 16%;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .save-changes-btn:hover {opacity: 0.8;}
+  
+  .col-title{font-size: 20px;}
+  
+  .col-text-secondary{margin-top: 5px;font-size: 18px;}
+  
+  span{}
+  
+  .settings-button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid black;
+    margin-top: 40%;
+    margin-left: 30%;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    font-size: 16px;
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
+    height:8%;
+    cursor:pointer;
+  }
+  
+  .settings-button:hover{color:#000000;background-color:#99959585;}
+  
+  .left-col{ height: 330px; width: 250px; float: left; margin-top: 5%;}
+
+  .editing-left-col{ height: 430px; width: 250px; float: left; margin-top: 5%;}
+  
+  .user-profile-image{height:150px; width:250px; display: block; margin: 0 auto; float:left; margin-left: 30px;}
+  
+  .user-fullname{font-size: 20px;margin-top:200px;margin-left: 60px;text-align:center;}
+  
+  .vertical-line{float:left;border: 1px inset;height: 90%;margin-left:5%;}
+  
+  .edit-text{font-size: 17px;float:left;margin-top: 16%;margin-left:5%;display:block;}
+  
+  .change-data-btn{
+    width: 25%;
+    height:30px;
+    float:right;
+    background-color: #42db47;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .change-data-btn:hover {
+    background-color: #55a84d;
+  }
+  
+  .change-data-input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group-login{
+    border:#fff 1px solid;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container-profile {
+    background-color: #fff;
+    width: 950px;
+    height: 650px;
+    padding: 16px;
+    display: inline-block;
+    margin: 8px 0;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
+  }
+  
+  .edit-container-profile{
+    background-color: #fff;
+    width: 950px;
+    height: 650px;
+    padding: 16px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 22px;
+    margin: 20px 0 0 0;
+    box-shadow: 0 5px 24px 16px rgba(0, 0, 0, 0.1), 8px 10px 20px 0 rgba(0, 0, 0, 0.09);
+  }
+  
+  .row{
+    float:right;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+    top: 5%;
+    margin-top: 25px;
+    width: 55%;
+    height:10%;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .editing-row, .pwd-editing-row{
+    width: 35%;
+    height: 10%;
+    float: left;
+    top: 5%;
+    margin-left: 90px;
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .autocomplete-dropdown-container
+  {
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .change-password-text{
+    margin-top: 20%;
+    margin-left:15%;
+    display: inline-block;
+    float:left;
+  }
+  
+  .switch {
+    float:right;
+    position: relative;
+    display: inline-block;
+    margin-top:17%;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .verify-btn{
+    border: 2px solid;
+    background-color: white;
+    border-color: #ff9800;
+    color: orange;
+    float:left;
+    display:inline-block;
+    width: 10%;
+    height:30px;
+    margin-top: 62px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  .verify-btn:hover{
+    background: #ff9800;
+    color: white;
+  }
+  
+  .change-password-btn{
+    border: 2px solid;
+    background-color: white;
+    border-color: rgb(60, 189, 82);
+    color: rgb(60, 189, 82);
+    float:left;
+    display:inline-block;
+    width: 15%;
+    height:35px;
+    margin-top: 57.5px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .change-password-btn:hover{
+    background: rgb(60, 189, 82);
+    color: white;
+  }
+  
+  .save-changes-btn{
+    width: 25%;
+    background-color: #2196F3;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 40px;
+    margin-left: 10%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .save-changes-btn:hover {opacity: 0.8;}
+  
+  .col-title{font-size: 20px;}
+  
+  .col-text-secondary{margin-top: 5px;font-size: 18px;}
+  
+  span{}
+  
+  .settings-button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid black;
+    margin-top: 40%;
+    margin-left: 30%;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    font-size: 16px;
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
+    height:8%;
+    cursor:pointer;
+  }
+  
+  .settings-button:hover{color:#000000;background-color:#99959585;}
+  
+  .left-col{height:500px;width:250px;float:left;margin-top: 5%;}
+  
+  .user-profile-image{height:150px;width:250px;display: block;margin: 0 auto;float:left;margin-left:8%;}
+  
+  .user-fullname{font-size: 20px;margin-top:200px;margin-left:30px;text-align:center;}
+  
+  .edit-text{font-size: 17px;float:left;margin-top: 16%;margin-left:5%;display:block;}
+  
+  .change-data-btn{
+    width: 25%;
+    height:30px;
+    float:right;
+    background-color: #42db47;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .change-data-btn:hover {
+    background-color: #55a84d;
+  }
+  
+  .change-data-input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group-login{
+    border:#fff 1px solid;
+  }
+  
+}

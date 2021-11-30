@@ -1,106 +1,438 @@
-/* .hero-container{
-    background: url('../images/radioactive.jpg') center center/cover no-repeat;
-    height:100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    object-fit: contain;
-} */
 
-.apexcharts-tooltip {
-    /* width: 500px;
-    height:100px; */
-  }
-
-  #chartContainer .apexcharts-tooltip {
-    color: #000000;
-  }
-  
-  #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
-    background: #ffffff !important;
-  }
-
-.map-button{
-    width: 900px;
-    height:550px;
-    position: absolute;
-    left:5%;
-    background: url('../images/google-map-background.jpg') center center/cover no-repeat;
-}
-
-.chart-button{
-    width: 700px;
-    height:550px;
-    position: absolute;
-    left:53%;
-    background: url('../images/chart-background.jpg') center center/cover no-repeat;
-}
-
-.sensor-text, .sensor-location-text{
-    color:white;
-    font-size: 18px;
-    line-height: 50px;
-    text-align: center;
-}
-
-.sensor-value, .sensor-location-value{
-    color: white;
-    margin-left: 38%;
-    font-size: 45px;
-    display:inline-block;
-}
-
-.sensor-measurement{
-    margin-left: 10px;
-    color:white;
-    font-size: 20px;
-    display:inline-block;
-}
-
-.greatest-sensor-value-container, .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
-    background: linear-gradient(to right, #fec7a1 , #fe848e);
-    background: linear-gradient(to right, #2ec7bd, #40acf4);
-    /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
-    width: 16%;
-    height: 125px;
-    margin-top:2.5%;
-    margin-left: 7%;
-    display:inline-block;
-    float:left;
-    border-radius: 10px;
-}
-
-.dashboard-line-chart{
-    float:left;
-    display: inline-block;
-    margin-left: 5%;
-    margin-top: 10%;
-    background: #2b2d3e;
-    padding: 20px;
-    border-radius: 10px;
-
-}
-
-.dashboard-bar-chart{
-    float:left;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #2b2d3e;
-    display: inline-block;
-    margin-top: 5%;
-    margin-left: 28%;
-    margin-bottom: 5%;
-
-}
-/* @media screen and (max-width: 1550px) {
-    .hero-container{
-        background: url('../images/radioactive.jpg') center center/cover no-repeat;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        object-fit: contain;
-        opacity: 0.9;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    #chartContainer .apexcharts-tooltip {
+        color: #000000;
+      }
+      
+    #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+        background: #ffffff !important;
     }
-} */
+    
+    .sensor-text, .sensor-location-text{
+        color:white;
+        font-size: 3.5vw;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .value{
+        color: white;
+        margin-top: 3%;
+        text-align: center;
+        font-size: 2em;
+    }
+
+        
+    .greatest-sensor-value-container, .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
+        background: linear-gradient(to right, #fec7a1 , #fe848e);
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 65%;
+        max-width: 60%;
+        height: 125px;
+        margin-top: 30%;
+        margin-left: 20%;
+        display: inline-block;
+        float: left;
+        border-radius: 10px;
+    }
+
+    .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
+        margin-top: 5%;
+    }
+    
+    .daily-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    .monthly-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .monthly-avg-dashboard-bar-chart{
+        width: 90%;
+        float: left;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2b2d3e;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+    #chartContainer .apexcharts-tooltip {
+        color: #000000;
+      }
+      
+    #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+        background: #ffffff !important;
+    }
+    
+    .sensor-text, .sensor-location-text{
+        color:white;
+        font-size: 18px;
+        line-height: 50px;
+        text-align: center;
+    }
+    
+    .value{
+        color: white;
+        margin-top: 3%;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .sensor-measurement{
+        margin-left: 10px;
+        color:white;
+        font-size: 20px;
+        display:inline-block;
+    }
+    
+    .greatest-sensor-value-container, .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
+        background: linear-gradient(to right, #fec7a1 , #fe848e);
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 50%;
+        max-width: 60%;
+        height: 125px;
+        margin-top: 20%;
+        margin-left: 25%;
+        display: inline-block;
+        float: left;
+        border-radius: 10px;
+    }
+
+    .sensor-location-container, .average-sensor-value-container, .exposure-level-container{
+        margin-top: 5%;
+    }
+    
+    .daily-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .monthly-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .monthly-avg-dashboard-bar-chart{
+        width: 90%;
+        float: left;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2b2d3e;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #chartContainer .apexcharts-tooltip {
+        color: #000000;
+      }
+      
+    #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+        background: #ffffff !important;
+    }
+    
+    .sensor-text, .sensor-location-text{
+        color:white;
+        font-size: 1.5vw;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .value{
+        color: white;
+        margin-top: 3%;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .greatest-sensor-value-container, .average-sensor-value-container{
+        /* background: linear-gradient(to right, #fec7a1 , #fe848e); */
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 30%;
+        height: 125px;
+        margin-top: 15%;
+        margin-left: 10%;
+        font-size: 18px;
+        float: left;
+        display: inline-block;
+    }
+
+    .exposure-level-container{
+        width: 30%;
+        height: 125px;
+        margin-top: 5%;
+        margin-left: 10%;
+        float:left;
+        display: inline-block;
+        border-radius: 10px;
+    }
+
+    .sensor-location-container {
+        /* background: linear-gradient(to right, #fec7a1 , #fe848e); */
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 30%;
+        height: 125px;
+        margin-top: 5%;
+        margin-right: 20%;
+        margin-left: 0;
+        float: right;
+        display: inline-block;
+        border-radius: 10px;
+    }
+    
+    .daily-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .monthly-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .monthly-avg-dashboard-bar-chart{
+        width: 90%;
+        float: left;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2b2d3e;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    
+    }
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #chartContainer .apexcharts-tooltip {
+        color: #000000;
+      }
+      
+    #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+        background: #ffffff !important;
+    }
+    
+    .sensor-text, .sensor-location-text{
+        color:white;
+        font-size: 1.5vw;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .value{
+        color: white;
+        margin-top: 3%;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .greatest-sensor-value-container, .average-sensor-value-container{
+        /* background: linear-gradient(to right, #fec7a1 , #fe848e); */
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 30%;
+        height: 125px;
+        margin-top: 15%;
+        margin-left: 12%;
+        font-size: 18px;
+        float: left;
+        display: inline-block;
+    }
+
+    .exposure-level-container{
+        width: 30%;
+        height: 125px;
+        margin-top: 5%;
+        margin-left: 12%;
+        float: left;
+        display: inline-block;
+        border-radius: 10px;
+    }
+
+    .sensor-location-container {
+        /* background: linear-gradient(to right, #fec7a1 , #fe848e); */
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 30%;
+        height: 125px;
+        margin-top: 5%;
+        margin-right: 16%;
+        margin-left: 0;
+        float: right;
+        display: inline-block;
+        border-radius: 10px;
+    }
+    
+    .daily-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .monthly-dashboard-line-chart{
+        width: 90%;
+        float: left;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .monthly-avg-dashboard-bar-chart{
+        width: 90%;
+        float: left;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2b2d3e;
+        display: inline-block;
+        margin-left: 4.5%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    
+    #chartContainer .apexcharts-tooltip {
+        color: #000000;
+      }
+      
+    #chartContainer .apexcharts-tooltip .apexcharts-tooltip-series-group.active {
+        background: #ffffff !important;
+    }
+    
+    .sensor-text, .sensor-location-text{
+        color:white;
+        font-size: 80%;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .value{
+        color: white;
+        margin-top: 3%;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .greatest-sensor-value-container, .average-sensor-value-container, .sensor-location-container, .exposure-level-container{
+        /* background: linear-gradient(to right, #fec7a1 , #fe848e); */
+        background: linear-gradient(to right, #2ec7bd, #40acf4);
+        /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+        width: 18%;
+        height: 125px;
+        margin-top: 7%;
+        margin-left: 5%;
+        margin-right: 0;
+        font-size: 18px;
+        float: left;
+        display: inline-block;
+    }
+    
+    .daily-dashboard-line-chart{
+        width: 42%;
+        display: inline-block;
+        margin-left: 5%;
+        margin-top: 5%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .monthly-dashboard-line-chart{
+        width: 42%;
+        float: left;
+        display: inline-block;
+        margin-left: 5%;
+        margin-top: 5%;
+        background: #2b2d3e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .monthly-avg-dashboard-bar-chart{
+        width: 42%;
+        float: left;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2b2d3e;
+        display: inline-block;
+        margin-left: 28%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    
+    }
+}

@@ -1,27 +1,9 @@
-input[type=text], input[type=email], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
 
-  .loginButton {
-    width: 100%;
-    background-color: #2196F3;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    float: right;
-    font-size: 16px;
-  }
 
-  .loginButton:hover {opacity: 0.8;}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
 
-  .container {
+  .signup-container {
     width: 400px;
     height:500px;
     padding: 16px;
@@ -31,11 +13,95 @@ input[type=text], input[type=email], input[type=password] {
     position: absolute;
     top: 50%;
     left: 50%;
+    background: #fff;
     transform: translate(-50%, -50%);
     box-shadow: 0 10px 8px 2px rgba(0, 0, 0, 0.2), 20px 12px 20px 0 rgba(0, 0, 0, 0.19);
     line-height: 22px;
 }
 
-h2{
-  text-align: center;
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.signup-button {
+  width: 90%;
+  height: 10vw;
+  background-color: #2196F3;
+  color: white;
+  padding: 14px 20px;
+  margin: 5% 5% 0 0;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+}
+
+.signup-button:hover {opacity: 0.8;}
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .signup-container {
+    width: 400px;
+    height:500px;
+    padding: 16px;
+    display: inline-block;
+    margin: 8px 0;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 8px 2px rgba(0, 0, 0, 0.2), 20px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    line-height: 22px;
+  }
+
+  input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .signup-button {
+    width: 15rem;
+    height: 3rem;
+    background-color: #2196F3;
+    color: white;
+    padding: 14px 20px;
+    margin: 30px 65px 0 0;
+    border: none;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+  }
+
+  .signup-button:hover {opacity: 0.8;}
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }

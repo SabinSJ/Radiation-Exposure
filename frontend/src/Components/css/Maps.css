@@ -1,60 +1,337 @@
   
 
-.control-panel {
-  background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
-  width: 15%;
-  height: 350px;
-  display: flex;
-  border-radius: 15px;
-  margin:150px 0 0 40px;
-  font-size: 1.2rem;
-  position: sticky;
-  z-index: 999;
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .control-panel {
+    background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
+    width: 35%;
+    height: 75vw;
+    display: flex;
+    border-radius: 15px;
+    margin: 20px 0 0 40px;
+    font-size: 1.2rem;
+    position: sticky;
+    z-index: 1;
+  }
+  
+  .control-panel-menu {
+    width: 75%;
+    height: 70vw;
+    display: block;
+    margin: 10% 0 0 13%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+  
+  .settings-btn{ 
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    float: left;
+    margin: 80px 0 0 8%;
+    object-fit: fit;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .col-text-secondary{
+    font-size: 3vw;
+    padding: 3%;
+    margin: 5% 0 0 15%;
+  }
+  
+  .nav-button{
+    width: 75%;
+    height: 8vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    cursor: pointer;
+    margin: 15% 0 5% 15%;
+    border-radius: 2px;
+  }
+  
+  .date-picker{
+    width: 80%;
+    height: 8vw;
+    margin: 10% 50% 10% 10%;
+  }
+  
+  .nav-submit{
+    width: 70%;
+    height: 7vw;
+    padding: 5px;
+    font-size: 2vw;
+    margin: 10% 50% 10% 15%;
+    text-align: center;
+    cursor: pointer;
+  }
+
 }
 
-.control-panel-menu {
-  display: block;
-  margin-left: 25%;
-  margin-top: 20px;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
-  list-style: none;
-  width: 80vw;
-  justify-content: end;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  .control-panel {
+    background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
+    width: 40%;
+    height: 70vw;
+    display: flex;
+    border-radius: 15px;
+    margin:150px 0 0 40px;
+    font-size: 1.2rem;
+    position: sticky;
+    z-index: 1;
+  }
+  
+  .control-panel-menu {
+    width: 70%;
+    height: 90vw;
+    display: block;
+    margin: 10% 0 0 15%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+  
+  .settings-btn{ 
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    float: left;
+    margin: 70px 0 0 8%;
+    object-fit: fit;
+    position: fixed;
+    z-index: 1;
+  }
+
+  
+  .col-text-secondary{
+    font-size: 3vw;
+    padding: 3%;
+    margin: 5% 0 0 15%;
+  }
+  
+  .nav-button{
+    width: 70%;
+    height: 6vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 15% 0 5% 17%;
+    border-radius: 2px;
+  }
+  
+  .date-picker{
+    width: 80%;
+    height: 7vw;
+    margin: 10% 50% 10% 10%;
+  }
+  
+  .nav-submit{
+    width: 70%;
+    height: 6vw;
+    padding: 5px;
+    font-size: 18px;
+    margin: 10% 50% 10% 15%;
+    text-align: center;
+    cursor: pointer;
+  }
 }
 
-.settings-btn{ 
-  width:3%;
-  height:55px;
-  cursor: pointer;
-  float:left;
-  margin:40px 0 0 120px;
-  object-fit: fit;
-  position: sticky;
-  z-index: 999;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .control-panel {
+    background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
+    width: 25%;
+    height: 55vw;
+    display: flex;
+    border-radius: 15px;
+    margin: 130px 0 0 40px;
+    font-size: 1.2rem;
+    position: sticky;
+    z-index: 1;
+  }
+  
+  .control-panel-menu {
+    width: 70%;
+    height: 50vw;
+    display: block;
+    margin: 10% 0 0 15%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+  
+  .col-text-secondary{
+    font-size: 2vw;
+    padding: 3%;
+    margin: 5% 0 0 15%;
+  }
+  
+  .nav-button{
+    width: 70%;
+    height: 5vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 15% 0 5% 15%;
+    border-radius: 2px;
+  }
+  
+  .date-picker{
+    width: 80%;
+    height: 7vw;
+    margin: 10% 50% 10% 10%;
+  }
+  
+  .nav-submit{
+    width: 70%;
+    height: 5vw;
+    padding: 5px;
+    font-size: 18px;
+    margin: 10% 50% 10% 15%;
+    text-align: center;
+    cursor: pointer;
+  }
+
 }
 
-.nav-button{
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border-radius: 2px;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .control-panel {
+    background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
+    width: 25%;
+    height: 45vw;
+    display: flex;
+    border-radius: 15px;
+    margin:150px 0 0 40px;
+    font-size: 1.2rem;
+    position: sticky;
+    z-index: 1;
+  }
+  
+  .control-panel-menu {
+    width: 70%;
+    height: 47vw;
+    display: block;
+    margin: 5% 0 0 15%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+
+  
+  .col-text-secondary{
+    font-size: 2vw;
+    padding: 3%;
+    margin: 5% 0 0 15%;
+  }
+  
+  .nav-button{
+    width: 75%;
+    height: 4vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 15% 0 5% 15%;
+    border-radius: 2px;
+  }
+  
+  .date-picker{
+    width: 75%;
+    height: 7vw;
+    margin: 10% 50% 10% 12%;
+  }
+  
+  .nav-submit{
+    width: 70%;
+    height: 4vw;
+    padding: 5px;
+    font-size: 18px;
+    margin: 10% 50% 10% 15%;
+    text-align: center;
+    cursor: pointer;
+  }
+
 }
 
-.date-picker{
-  width:50%;
-  margin-right: 50%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .control-panel {
+    background: linear-gradient(90deg, rgb(58, 59, 59) 0%, rgb(58, 59, 59) 100%);
+    width: 13%;
+    height: 22vw;
+    display: flex;
+    border-radius: 15px;
+    margin:150px 0 0 40px;
+    font-size: 1.2rem;
+    position: sticky;
+    z-index: 1;
+  }
 
-.nav-submit{
-  width:50%;
-  padding:5px;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
+  .settings-btn{ 
+    width: 50px;
+    height: 50px;
+    margin-top: 80px;
+  }
+  
+  .control-panel-menu {
+    width: 70%;
+    height: 20vw;
+    display: block;
+    margin: 10% 0 0 15%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+  
+  .col-text-secondary{
+    font-size: 0.8vw;
+    padding: 3%;
+    margin: 3% 0 0 22%;
+  }
+  
+  .nav-button{
+    width: 55%;
+    height: 2.2vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.6vw;
+    cursor: pointer;
+    margin: 15% 0 5% 22.5%;
+    border-radius: 2px;
+  }
+  
+  .date-picker{
+    width: 80%;
+    height: 4vw;
+    margin: 10% 2% 2% 10%;
+  }
+  
+  .nav-submit{
+    width: 65%;
+    height: 1.8vw;
+    padding: 5px;
+    font-size: 1vw;
+    margin: 2.5% 50% 10% 18%;
+    text-align: center;
+    cursor: pointer;
+  }
+  
 }

@@ -1,126 +1,117 @@
 
 
-.chart-control-panel {
-  background: rgb(88, 88, 99);
-  width: 300px;
-  height: 400px;
-  display: flex;
-  position: relative;
-  float: left;
-  border-radius: 30px;
-  margin: 60px 0 0 40px;
-}
-
-.chart-control-panel-menu {
-  display: block;
-  margin-left: 25%;
-  margin-top: 20px;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
-  list-style: none;
-  width: 200px;
-  justify-content: end;
-}
-
-.col-text-secondary{
-  color:#FFF;
-}
-
-.chart-date-picker{
-  width:75%;
-  margin-right: 50%;
-  margin-bottom: 50px;
-  margin-top: 40px;
-}
-
-.chart-nav-submit{
-  width:75%;
-  padding:5px;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.day-chart-boxes{
-  width:300px;
-  height:350px;
-  float: left;
-  margin:20px 0 0 5%;
-}
-
-.month-chart-boxes{
-  width:300px;
-  height:350px;
-  float: left;
-  margin:20px 0 0 5%;
-  background-color: cadetblue;
-}
-
-.day-line-chart
-{
-  background-color: #2b2d3e;
-  padding: 20px;
-  border-radius: 10px;
-  margin:40px 0 0 9%;
-  float:left;
-}
-
-.month-line-chart{
-  background-color: #2b2d3e;
-  padding: 20px;
-  border-radius: 10px;
-  margin:40px 4.5% 0 10%;
-  float:right;
-}
-
-.chart-greatest-sensor-value-container{
-  background: linear-gradient(to right, #fec7a1 , #fe848e);
-  background: linear-gradient(to right, #2ec7bd, #40acf4);
-  /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
-  width: 100%;
-  height: 125px;
-  margin:75px 0 0 10px;
-  border-radius: 10px;
-}
-
-.chart-average-sensor-value-container{
-  background: linear-gradient(to right, #2ec7bd, #40acf4);
-  width: 100%;
-  height: 125px;
-  border-radius: 10px;
-  margin: 30px 0 0 10px;
-}
-
-
-.chart-sensor-text{
-  color:white;
-  font-size: 18px;
-  line-height: 50px;
-  text-align: center;
-}
-
-.chart-sensor-value{
-  color: white;
-  margin-left: 30%;
-  font-size: 45px;
-  display:inline-block;
-}
-
-.chart-sensor-measurement{
-  margin-left: 10px;
-  color:white;
-  font-size: 20px;
-  display:inline-block;
-}
-
-@media screen and (max-width: 1500px) {
-
-
-}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
+  .chart-control-panel {
+    background: rgb(88, 88, 99);
+    width: 50%;
+    height: 70vw;
+    display: flex;
+    position: relative;
+    float: left;
+    border-radius: 30px;
+    margin: 120px 0 0 22%;
+  }
+  
+  .chart-control-panel-menu {
+    width: 70%;
+    height: 65vw;
+    display: block;
+    margin-left: 15%;
+    margin-top: 10%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+  
+  .col-text-secondary{
+    color:#FFF;
+  }
+  
+  .chart-date-picker{
+    width: 75%;
+    height: 5vw;
+    margin-left: 12%;
+    margin-bottom: 30%;
+    margin-top: 30%;
+  }
+  
+  .chart-nav-submit{
+    width: 75%;
+    height: 7vw;
+    padding: 1.2vw;
+    margin-left: 12%;
+    font-size: 3vw;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .day-chart-boxes{
+    width: 65%;
+    height: 15vw;
+    float: left;
+    margin: 20px 0 0 5%;
+  }
+  
+  .month-chart-boxes{
+    width: 300px;
+    height: 350px;
+    float: left;
+    margin: 20px 0 0 5%;
+    background-color: cadetblue;
+  }
+  
+  .day-line-chart
+  {
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 150%;
+    margin-bottom: 5%;
+  }
+  
+  .month-line-chart{
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+  
+  .chart-greatest-sensor-value-container{
+    background: linear-gradient(to right, #fec7a1 , #fe848e);
+    background: linear-gradient(to right, #2ec7bd, #40acf4);
+    /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+    width: 100%;
+    height: 26vw;
+    margin: 20% 0 0 15%;
+    border-radius: 10px;
+  }
+  
+  .chart-average-sensor-value-container{
+    background: linear-gradient(to right, #2ec7bd, #40acf4);
+    width: 100%;
+    height: 26vw;
+    border-radius: 10px;
+    margin: 10% 0 0 15%;
+  }
+  
+  .chart-sensor-text{
+    color:white;
+    font-size: 0.9em;
+    line-height: 50px;
+    text-align: center;
+  }
 
 }
 
@@ -128,35 +119,394 @@
 @media only screen and (min-width: 600px) {
 
 
-  .day-chart-boxes{
-    width:300px;
-    height:350px;
+  .chart-control-panel {
+    background: rgb(88, 88, 99);
+    width: 50%;
+    height: 70vw;
+    display: flex;
+    position: relative;
     float: left;
-    margin:20px 0 0 5%;
+    border-radius: 30px;
+    margin: 17% 0 0 22%;
+  }
+  
+  .chart-control-panel-menu {
+    width: 70%;
+    height: 65vw;
+    display: block;
+    margin-left: 15%;
+    margin-top: 10%;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    justify-content: end;
+  }
+
+  .col-text-secondary{
+    color:#FFF;
+  }
+  
+  .chart-date-picker{
+    width: 75%;
+    height: 5vw;
+    margin-left: 12%;
+    margin-bottom: 30%;
+    margin-top: 30%;
+  }
+  
+  .chart-nav-submit{
+    width: 75%;
+    height: 7vw;
+    padding: 1.2vw;
+    margin-left: 12%;
+    font-size: 3vw;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .day-chart-boxes{
+    width: 65%;
+    height: 15vw;
+    float: left;
+    margin: 20px 0 0 5%;
   }
   
   .month-chart-boxes{
-    width:300px;
-    height:350px;
+    width: 300px;
+    height: 350px;
     float: left;
-    margin:20px 0 0 5%;
+    margin: 20px 0 0 5%;
+    background-color: cadetblue;
   }
+  
+  .day-line-chart
+  {
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 130%;
+    margin-bottom: 5%;
+  }
+  
+  .month-line-chart{
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+  
+  .chart-greatest-sensor-value-container{
+    background: linear-gradient(to right, #fec7a1 , #fe848e);
+    background: linear-gradient(to right, #2ec7bd, #40acf4);
+    /* background: linear-gradient(to right, #ee9ae6, #8873f3); */
+    width: 75%;
+    height: 22vw;
+    margin: 20% 0 0 27%;
+    border-radius: 10px;
+  }
+  
+  .chart-average-sensor-value-container{
+    background: linear-gradient(to right, #2ec7bd, #40acf4);
+    width: 75%;
+    height: 22vw;
+    border-radius: 10px;
+    margin: 10% 0 0 27%;
+  }
+
+  .chart-sensor-text{
+    color:white;
+    font-size: 1em;
+    line-height: 50px;
+    text-align: center;
+  }
+
 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+  .chart-control-panel {
+    width: 35%;
+    height: 45vw;
+    margin: 15% 0 0 30%;
+  }
+  
+  .chart-control-panel-menu {
+    width: 70%;
+    height: 35vw;
+  }
+  
+  .chart-date-picker{
+    width: 75%;
+    height: 5vw;
+    margin-left: 12%;
+    margin-bottom: 30%;
+    margin-top: 30%;
+  }
+  
+  .chart-nav-submit{
+    width: 75%;
+    height: 4.5vw;
+    padding: 1.2vw;
+    margin-left: 12%;
+    font-size: 2vw;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .day-chart-boxes{
+    width: 45%;
+    height: 4vw;
+    float: left;
+    margin: 20px 0 0 5%;
+  }
+  
+  .month-chart-boxes{
+    width: 45%;
+    height: 4vw;
+    float: right;
+    margin: 20px 0 0 5%;
+    background-color: cadetblue;
+  }
+  
+  .day-line-chart
+  {
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 45%;
+    margin-bottom: 5%;
+  }
+  
+  .month-line-chart{
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  
+  .chart-greatest-sensor-value-container{
+    width: 75%;
+    height: 14vw;
+    margin: 10% 0 0 10%;
+    border-radius: 10px;
+    float: left;
+  }
+  
+  .chart-average-sensor-value-container{
+    width: 75%;
+    height: 14vw;
+    margin: 10% 10% 0 110%;
+  }
 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
-
+  
+  .chart-control-panel {
+    width: 30%;
+    height: 40vw;
+    margin: 12% 0 0 33%;
+  }
+  
+  .chart-control-panel-menu {
+    width: 70%;
+    height: 35vw;
+  }
+  
+  .chart-date-picker{
+    width: 75%;
+    height: 5vw;
+    margin-left: 12%;
+    margin-bottom: 30%;
+    margin-top: 30%;
+  }
+  
+  .chart-nav-submit{
+    width: 75%;
+    height: 4.5vw;
+    padding: 1.2vw;
+    margin-left: 12%;
+    font-size: 2vw;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .day-chart-boxes{
+    width: 45%;
+    height: 4vw;
+    float: left;
+    margin: 20px 0 0 5%;
+  }
+  
+  .month-chart-boxes{
+    width: 45%;
+    height: 4vw;
+    float: right;
+    margin: 20px 0 0 5%;
+    background-color: cadetblue;
+  }
+  
+  .day-line-chart
+  {
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 45%;
+    margin-bottom: 5%;
+  }
+  
+  .month-line-chart{
+    width: 90%;
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2b2d3e;
+    display: inline-block;
+    margin-left: 4.5%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+  
+  .chart-greatest-sensor-value-container{
+    width: 75%;
+    height: 14vw;
+    margin: 10% 0 0 10%;
+  }
+  
+  .chart-average-sensor-value-container{
+    width: 75%;
+    height: 14vw;
+    margin: 10% 10% 0 110%;
+  }
+  
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  
+  .chart-control-panel {
+    width: 15%;
+    height: 21vw;
+    margin: 7% 0 0 2%;
+  }
 
+  .chart-control-panel-menu {
+    width: 60%;
+    height: 19.5vw;
+    margin: 5% 0 0 20%;
+  }
+
+  .chart-date-picker{
+    width: 75%;
+    margin-right: 50%;
+    margin-bottom: 50px;
+    margin-top: 40px;
+  }
+
+  .chart-nav-submit{
+    width: 75%;
+    height: 2.5vw;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .day-chart-boxes{
+    width: 17%;
+    height: 15vw;
+    float: left;
+    margin: 3% 0 0 5%;
+  }
+
+  .max-day-chart-sensor-value{
+    color: white;
+    margin: 2.5% 0 0 40%;
+    font-size: 2.5vw;
+    display:inline-block;
+  }
+
+  .avg-day-chart-sensor-value{
+    color: white;
+    margin: 2.5% 0 0 40%;
+    font-size: 2.5vw;
+    display: inline-block;
+  }
+
+  .max-month-chart-sensor-value{
+    color: white;
+    margin: 2.5% 0 0 40%;
+    font-size: 2.5vw;
+    display:inline-block;
+  }
+
+  .avg-month-chart-sensor-value{
+    color: white;
+    margin: 2.5% 0 0 40%;
+    font-size: 2.5vw;
+    display:inline-block;
+  }
+
+  .month-chart-boxes{
+    width: 300px;
+    height: 350px;
+    float: left;
+    margin: 20px 0 0 5%;
+    background-color: cadetblue;
+  }
+
+  .day-line-chart
+  {
+    width: 45%;
+    background-color: #2b2d3e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5% 0 1% 9%;
+    float: left;
+  }
+
+  .month-line-chart{
+    width: 45%;
+    background-color: #2b2d3e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 0 0 48%;
+    float: left;
+  }
+
+  .chart-greatest-sensor-value-container{
+    width: 100%;
+    height: 7vw;
+    margin: 27% 0 0 10%;
+  }
+
+  .chart-average-sensor-value-container{
+    width: 100%;
+    height: 7vw;
+    margin: 12% 0 0 10%;
+    float: left;
+    display:inline-block;
+  }
 }

@@ -19,6 +19,8 @@ import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.histogram.DateHistogramInterval;
 import org.elasticsearch.search.aggregations.metrics.AvgAggregationBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,9 @@ import java.util.Map;
 
 @Service
 public class PocketGeigerServiceImpl implements PocketGeigerService {
+
+    private final double deltaLat = 0.0015;
+    private final double deltaLong = 0.0015;
 
     @Autowired
     PocketGeigerRepository pocketGeigerRepository;
@@ -62,6 +67,14 @@ public class PocketGeigerServiceImpl implements PocketGeigerService {
     @Override
     public Iterable<PocketGeigerDTO> findByTimestampGreaterThanEqualAndTimestampLessThanEqualOrderByTimestampAsc(long timestamp_startOfDay, long timestamp_endOfDay) {
         return pocketGeigerRepository.findByTimestampGreaterThanEqualAndTimestampLessThanEqualOrderByTimestampAsc(timestamp_startOfDay,timestamp_endOfDay);
+    }
+
+    public Iterable<PocketGeigerDTO> findByCoordinatesSensorData(String sensor_name, double latitude, double longitude) {
+        DateTimeZone timeZone = DateTimeZone.forID("Europe/Bucharest");
+        DateTime today = new DateTime(timeZone).withTimeAtStartOfDay();
+        long timestamp = today.getMillis() / 1000l;
+
+        return pocketGeigerRepository.findBySensorAndLocationlatBetweenAndLocationlongBetweenAndTimestampGreaterThanEqualOrderByTimestampAsc(sensor_name, latitude - deltaLat, latitude + deltaLat, longitude - deltaLong, longitude + deltaLong, timestamp);
     }
 
     public List<Aggregation> findMonths() throws IOException{

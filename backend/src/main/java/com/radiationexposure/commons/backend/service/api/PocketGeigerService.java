@@ -13,5 +13,4 @@ public interface PocketGeigerService {
     Iterable<PocketGeigerDTO> findByTimestampGreaterThanEqualOrderByTimestampAsc(long timestamp);
 
     Iterable<PocketGeigerDTO> findByTimestampGreaterThanEqualAndTimestampLessThanEqualOrderByTimestampAsc(long timestamp_startOfDay, long timestamp_endOfDay);
-
 }

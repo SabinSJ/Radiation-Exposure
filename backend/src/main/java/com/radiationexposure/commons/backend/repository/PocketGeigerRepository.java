@@ -15,5 +15,7 @@ public interface PocketGeigerRepository extends ElasticsearchRepository<PocketGe
 
     List<PocketGeigerDTO> findByTimestampGreaterThanEqualAndTimestampLessThanEqualOrderByTimestampAsc(long timestamp_startOfDay, long timestamp_endOfDay);
 
-    List<PocketGeigerDTO> findByLocationlatGreaterThanAndLocationlongGreaterThan(int var1, int var2);
+   // List<PocketGeigerDTO> findAllBySensorAndLocationLongBetweenAndLocationLatBetweenAndTimestampAfterOrderByTimestampAsc(int var1, int var2);
+
+    List<PocketGeigerDTO> findBySensorAndLocationlatBetweenAndLocationlongBetweenAndTimestampGreaterThanEqualOrderByTimestampAsc(String sensor_name, double latitude1, double latitude2, double longitude1, double longitude2, long timestamp);
 }

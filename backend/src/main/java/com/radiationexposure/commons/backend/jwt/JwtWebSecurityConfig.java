@@ -48,7 +48,7 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/authenticate",
                         "/sensor/*",
                         "/sensor/getSensor/*",
-                        "/sensor/getDataByTimestampForDailyChart/",
+                        "/sensor/getDataByTimestampForDailyChart/*/*/*",
                         "/sensor/getDataForDailyChartByMonth",
                         "/sensor/getDataByTimestampsForChartByChoosingMonth/*/*/*",
                         "/sensor/getDataByTimestampsForChartByChoosingDay/*/*/*",

@@ -27,17 +27,17 @@ public class PocketGeigerController {
     @Autowired
     public PocketGeigerController(PocketGeigerServiceImpl pocketGeigerServiceImpl) { this.pocketGeigerServiceImpl = pocketGeigerServiceImpl; }
 
-//    @PostMapping("/create")
-//    public PocketGeigerDTO create(@RequestBody final PocketGeigerDTO pocketGeigerDTO)
-//    {
-//        return pocketGeigerServiceImpl.save(pocketGeigerDTO);
-//    }
-
     @PostMapping("/create")
-    public void create(@RequestBody final PocketGeigerDTO pocketGeigerDTO)
+    public PocketGeigerDTO create(@RequestBody final PocketGeigerDTO pocketGeigerDTO)
     {
-        System.out.println(pocketGeigerDTO);
+        return pocketGeigerServiceImpl.save(pocketGeigerDTO);
     }
+
+//    @PostMapping("/create")
+//    public void create(@RequestBody final PocketGeigerDTO pocketGeigerDTO)
+//    {
+//        System.out.println(pocketGeigerDTO);
+//    }
 
     @GetMapping("/getAll")
     public Iterable<PocketGeigerDTO> getAll() {
@@ -50,14 +50,19 @@ public class PocketGeigerController {
         return pocketGeigerServiceImpl.findBySensorOrderByTimestampAsc(sensor);
     }
 
-    @GetMapping("/getDataByTimestampForDailyChart")
-    public Iterable<PocketGeigerDTO> getTimestampForDailyChart() {
+//    @GetMapping("/getDataByTimestampForDailyChart")
+//    public Iterable<PocketGeigerDTO> getTimestampForDailyChart() {
+//
+//        DateTimeZone timeZone = DateTimeZone.forID("Europe/Bucharest");
+//        DateTime today = new DateTime(timeZone).withTimeAtStartOfDay();
+//        long timestamp = today.getMillis() / 1000l;
+//
+//        return pocketGeigerServiceImpl.findByTimestampGreaterThanEqualOrderByTimestampAsc(timestamp);
+//    }
 
-        DateTimeZone timeZone = DateTimeZone.forID("Europe/Bucharest");
-        DateTime today = new DateTime(timeZone).withTimeAtStartOfDay();
-        long timestamp = today.getMillis() / 1000l;
-
-        return pocketGeigerServiceImpl.findByTimestampGreaterThanEqualOrderByTimestampAsc(timestamp);
+    @GetMapping("/getDataByTimestampForDailyChart/sensor_name/latitude/longitude")
+    public Iterable<PocketGeigerDTO> getTimestampForDailyChart(@PathVariable String sensor_name, @PathVariable double latitude, @PathVariable double longitude) {
+        return pocketGeigerServiceImpl.findByCoordinatesSensorData(sensor_name,latitude,longitude);
     }
 
     @GetMapping("/getMonths")
